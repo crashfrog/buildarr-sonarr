@@ -39,6 +39,7 @@ class AuthenticationMethod(BaseEnum):
     none = "none"
     basic = "basic"
     form = "forms"
+    external = "external"
 
 
 class CertificateValidation(BaseEnum):
