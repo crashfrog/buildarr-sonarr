@@ -51,7 +51,7 @@ Changelog = "https://buildarr.github.io/plugins/sonarr/release-notes"
 sonarr = "buildarr_sonarr.plugin:SonarrPlugin"
 
 [tool.setuptools]
-packages = ["buildarr_sonarr"]
+packages = [{include = "buildarr_sonarr"}]
 
 [tool.setuptools_scm]
 
