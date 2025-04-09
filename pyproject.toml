@@ -8,13 +8,15 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "buildarr-sonarr"
 version = "0.6.1"
-description = "Sonarr PVR plugin for Buildarr"
-readme = "README.md"
+description = "Sonarr PVR plugin for Buildarr "
 authors = ["Callum Dickinson <callum.dickinson.nz@gmail.com>"]
 license = "GPL-3.0-or-later"
+homepage = "https://buildarr.github.io"
+repository = "https://github.com/buildarr/buildarr-sonarr"
+documentation = "https://buildarr.github.io/plugins/sonarr"
 keywords = [
     "buildarr",
-    "sonarr",
+    "radarr",
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -25,8 +27,8 @@ classifiers = [
     "Topic :: System :: Systems Administration",
     "Typing :: Typed",
 ]
-
-packages = [{include = "buildarr_radarr"}]
+readme = "README.md"
+packages = [{include = "buildarr_sonarr"}]
 
 [tool.poetry.urls]
 "Changes" = "https://buildarr.github.io/plugins/sonarr/release-notes"
