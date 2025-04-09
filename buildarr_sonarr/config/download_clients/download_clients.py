@@ -458,7 +458,7 @@ class DownloadstationUsenetDownloadClient(UsenetDownloadClient):
         ("port", "port", {"is_field": True}),
         ("use_ssl", "useSsl", {"is_field": True}),
         ("username", "username", {"is_field": True}),
-        ("password", "password", {"is_field": True}),
+        ("password", "password", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         (
             "category",
             "tvCategory",
@@ -568,7 +568,7 @@ class NzbgetDownloadClient(UsenetDownloadClient):
             {"is_field": True, "decoder": lambda v: v or None, "encoder": lambda v: v or ""},
         ),
         ("username", "username", {"is_field": True}),
-        ("password", "password", {"is_field": True}),
+        ("password", "password", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         (
             "category",
             "tvCategory",
@@ -657,7 +657,7 @@ class NzbvortexDownloadClient(UsenetDownloadClient):
             "urlBase",
             {"is_field": True, "decoder": lambda v: v or None, "encoder": lambda v: v or ""},
         ),
-        ("api_key", "apiKey", {"is_field": True}),
+        ("api_key", "apiKey", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         (
             "category",
             "tvCategory",
@@ -787,7 +787,7 @@ class SabnzbdDownloadClient(UsenetDownloadClient):
                 "encoder": lambda v: v or "",
             },
         ),
-        ("api_key", "apiKey", {"is_field": True}),
+        ("api_key", "apiKey", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         (
             "category",
             "tvCategory",
@@ -870,7 +870,7 @@ class Aria2DownloadClient(TorrentDownloadClient):
         ("port", "port", {"is_field": True}),
         ("use_ssl", "useSsl", {"is_field": True}),
         ("rpc_path", "rpcPath", {"is_field": True}),
-        ("secret_token", "secretToken", {"is_field": True}),
+        ("secret_token", "secretToken", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
     ]
 
 
@@ -957,7 +957,7 @@ class DelugeDownloadClient(TorrentDownloadClient):
             "urlBase",
             {"is_field": True, "decoder": lambda v: v or None, "encoder": lambda v: v or ""},
         ),
-        ("password", "password", {"is_field": True}),
+        ("password", "password", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         (
             "category",
             "tvCategory",
@@ -1032,7 +1032,7 @@ class DownloadstationTorrentDownloadClient(TorrentDownloadClient):
         ("port", "port", {"is_field": True}),
         ("use_ssl", "useSsl", {"is_field": True}),
         ("username", "username", {"is_field": True}),
-        ("password", "password", {"is_field": True}),
+        ("password", "password", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         (
             "category",
             "tvCategory",
@@ -1210,7 +1210,7 @@ class HadoukenDownloadClient(TorrentDownloadClient):
             {"is_field": True, "decoder": lambda v: v or None, "encoder": lambda v: v or ""},
         ),
         ("username", "username", {"is_field": True}),
-        ("password", "password", {"is_field": True}),
+        ("password", "password", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         ("category", "category", {"is_field": True}),
     ]
 
@@ -1345,7 +1345,7 @@ class QbittorrentDownloadClient(TorrentDownloadClient):
             {
                 "is_field": True,
                 "decoder": lambda v: v or None,
-                "encoder": lambda v: v or "",
+                "encoder": lambda v: v.get_secret_value(),
                 "field_default": None,
             },
         ),
@@ -1482,7 +1482,7 @@ class RtorrentDownloadClient(TorrentDownloadClient):
         ("use_ssl", "useSsl", {"is_field": True}),
         ("url_base", "urlBase", {"is_field": True}),
         ("username", "username", {"is_field": True}),
-        ("password", "password", {"is_field": True}),
+        ("password", "password", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         (
             "category",
             "tvCategory",
@@ -1666,7 +1666,7 @@ class TransmissionDownloadClientBase(TorrentDownloadClient):
             "username",
             {"is_field": True, "decoder": lambda v: v or None, "encoder": lambda v: v or ""},
         ),
-        ("password", "password", {"is_field": True, "field_default": None}),
+        ("password", "password", {"is_field": True, "encoder": lambda v: v.get_secret_value(), "field_default": None}),
         (
             "category",
             "tvCategory",
@@ -1822,7 +1822,7 @@ class UtorrentDownloadClient(TorrentDownloadClient):
             {"is_field": True, "decoder": lambda v: v or None, "encoder": lambda v: v or ""},
         ),
         ("username", "username", {"is_field": True}),
-        ("password", "password", {"is_field": True}),
+        ("password", "password", {"is_field": True, "encoder": lambda v: v.get_secret_value()}),
         (
             "category",
             "tvCategory",
